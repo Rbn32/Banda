@@ -1,0 +1,22 @@
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{REQUEST_URI} !\.(php|phtml)$
+
+RewriteRule ^(.*)$ index.php?page=$1 [QSA,L]
+
+Options -MultiViews
+
+# remove www from host
+RewriteCond %{HTTP_HOST} ^www\.(.+)
+RewriteCond %{HTTPS}s/%1 ^(on(s)|offs)/(.+)
+RewriteRule ^ http%2://%3%{REQUEST_URI} [L,R=301]
+
+
+#RewriteBase   /admin
+
+
+<FilesMatch "\.(?:ini)$">
+Order allow,deny
+Deny from all
+</FilesMatch>
