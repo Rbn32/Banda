@@ -14,7 +14,6 @@
 			<td><a href="editar?id=<?php echo $value['idimage']?>">Editar</a></td>
 			<td><a href="deletar?id=<?php echo $value['idimage']?>">Deletar</a></td>
 		</tr>
-			testando galeria
 		<?php } ?>
 	</table>
 </form>
