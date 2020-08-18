@@ -30,6 +30,22 @@ class blog extends controller{
 
 	function editar(){
 
+		if ($_POST) {
+	
+			$this->model->updateBlogdados($_POST, $_GET['id']);
+		
+		}
+
+		$this->dadosAtuais = $this->model->getDadosatuais($_GET['id']);
+
 		$this->setView("blog_editar");
 	}
+
+	function deletar(){
+
+		$this->model->deleteBlogdados($_GET['id']);
+
+		header("location: ".$this->path."listar");
+	}
+
 }

@@ -10,25 +10,45 @@ class slider_model extends mysql
 		return $this->read("select * from slider");
 	}
 
-	function insertSliderdados(){
+	function insertSliderdados($dados){
 
 		return $this->save("insert into slider (title, subtitle, image, video) 
 
-			VALUES ('".$_POST['###']."', '".$_POST['###']."', '".$_POST['###']."', '".$_POST['###']."')
+			VALUES ('".$dados['title']."', '".$dados['subtitle']."', '".$dados['image']."', '".$dados['video']."')
 			");
 	}
 
-	function updateSliderdados(){
+	function updateSliderdados($dados, $id){
 
-		return $this->update("update slider 
+		return $this->update("
 
-			SET title = '".$_POST['###']."', subtitle = '".$_POST['###']."', image = '".$_POST['###']."', video = '".$_POST['###']."'");
+			UPDATE slider 
+
+			SET title = '".$dados['title']."', subtitle = '".$dados['subtitle']."', image = '".$dados['image']."', video = '".$dados['video']."' 
+
+			WHERE idslider = $id
+
+			");
 	}
 
 	function deleteSliderdados(){
 
 		return $this->delete("delete FROM slider where idslider = '".$_POST['id']."'");
 	}
+
+	function getDadosatuais($id){
+
+		return $this->read("SELECT * FROM slider WHERE idslider = $id");
+
+	}
+
+	function deletar($id){
+
+		return $this->delete("DELETE FROM slider WHERE idslider = $id");
+
+		header("Location: ".$this->path."listar");
+	}
+
 }
 
 

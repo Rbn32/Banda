@@ -12,13 +12,22 @@ class blog_model extends mysql
 		return $this->save("insert into blog (title, image, text) VALUES('".$dados['title']."', '".$dados['image']."', '".$dados['text']."')");
 	}
 
-	function updateBlogdados($dados){
+	function updateBlogdados($id){
 
-		return $this->update("update blog SET title = '".$dados['###']."', image = '".$dados['###']."', text = '".$dados['###']."'" );
+		return $this->update("
+
+			update blog SET title = '".$dados['title']."', image = '".$dados['image']."', text = '".$dados['text']."' WHERE idblog=$id
+
+			");
 	}
 
-	//function deleteBlogdados($id){
+	function getDadosatuais($id){
 
-		//return $this->delete("delete FROM blog where idblog = ".$dados.['id']"");
-	//}
+		return $this->read("select * from blog where idblog = $id");
+	}
+
+	function deleteBlogdados($id){
+
+		return $this->delete("DELETE FROM blog WHERE idblog = $id");
+	}
 }

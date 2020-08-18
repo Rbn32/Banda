@@ -1,26 +1,31 @@
 <?php
 
-class turne_model extends mysql
-{
+class turne_model extends mysql{
 	
 	function getTurnedados(){
 		
 		return $this->read("select * from tour");
 	}
 
-	function insertTurnedados(){
+	function getDadosatuais($id){
 
-		return $this->save("insert into tour (date, local, information) VALUES ('".$_POST['###']."', '".$_POST['###']."', '".$_POST['###']."')");
+		return $this->read("SELECT * FROM tour WHERE idtour = $id");
 	}
 
-	function updateTurnedadaos(){
+	function insertTurnedados($dados){
 
-		return $this->update("update tour 
-			SET date = '".$_POST['###']."', local = '".$_POST['###']."', information = '".$_POST['###']."' where idtour = '".$_GET['id']."'");
+		return $this->save("INSERT INTO tour (date, local, information) VALUES ('".$dados['date']."', '".$dados['local']."', '".$dados['information']."')");
+	}
+
+	function updateTurnedados($dados, $id){
+
+		return $this->update("UPDATE tour SET date = '".$dados['date']."', local = '".$dados['local']."', information = '".$dados['information']."' WHERE idtour = $id");
 	}
 
 	function deleteTurnedados(){
 
-		return $this->delete("delete FROM tour where idtour = '".$_GET['id']."' ");
+		return $this->delete("delete FROM tour where idtour = $id");
+
+		header("Locatiion: ".$this->path." listar");
 	}
 }

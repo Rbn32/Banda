@@ -13,21 +13,38 @@ class turne extends controller{
 
 	function inserir(){
 
-		$this->model->database();
-
+		if ($_POST) {
+			
+			$this->model->insertTurnedados($_POST);
+		}
+		
 		$this->setView("turne_inserir");
 	}
 
-	function pastel(){
+	function listar(){
 
-		$this->dados = $this->model->getTurnedados();
+		$this->dadosAtuais = $this->model->getTurnedados();
 
 		$this->setView("turne_listar");
 	}
 
 	function editar(){
 
+		if ($_POST) {
+			
+			$this->model->updateTurnedados($_POST, $_GET['id']);
+		}
+
+		$this->dadosAtuais = $this->model->getDadosatuais($_GET['id']);
+
 		$this->setView("turne_editar");
 	}
+
+	function deletar(){
+
+
+
+	}
+
 }
 
