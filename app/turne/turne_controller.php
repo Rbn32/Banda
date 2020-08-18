@@ -33,6 +33,8 @@ class turne extends controller{
 		if ($_POST) {
 			
 			$this->model->updateTurnedados($_POST, $_GET['id']);
+
+			header("Location: ".$this->path." listar");
 		}
 
 		$this->dadosAtuais = $this->model->getDadosatuais($_GET['id']);
@@ -42,7 +44,9 @@ class turne extends controller{
 
 	function deletar(){
 
+		$this->model->deleteTurnedados($_GET['id']);
 
+		header("Location: ".$this->path." listar");
 
 	}
 

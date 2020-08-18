@@ -4,7 +4,7 @@ class turne_model extends mysql{
 	
 	function getTurnedados(){
 		
-		return $this->read("select * from tour");
+		return $this->read("SELECT * FROM tour");
 	}
 
 	function getDadosatuais($id){
@@ -22,9 +22,9 @@ class turne_model extends mysql{
 		return $this->update("UPDATE tour SET date = '".$dados['date']."', local = '".$dados['local']."', information = '".$dados['information']."' WHERE idtour = $id");
 	}
 
-	function deleteTurnedados(){ 
+	function deleteTurnedados($id){ 
 
-		return $this->delete("delete FROM tour where idtour = $id");
+		return $this->delete("DELETE FROM tour WHERE idtour = $id");
 
 		header("Locatiion: ".$this->path." listar");
 	}

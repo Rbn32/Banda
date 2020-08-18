@@ -33,6 +33,8 @@ class blog extends controller{
 		if ($_POST) {
 	
 			$this->model->updateBlogdados($_POST, $_GET['id']);
+
+			header("Location: ".$this->path." listar");
 		
 		}
 

@@ -12,11 +12,11 @@ class blog_model extends mysql
 		return $this->save("insert into blog (title, image, text) VALUES('".$dados['title']."', '".$dados['image']."', '".$dados['text']."')");
 	}
 
-	function updateBlogdados($id){
+	function updateBlogdados($dados, $id){
 
 		return $this->update("
 
-			update blog SET title = '".$dados['title']."', image = '".$dados['image']."', text = '".$dados['text']."' WHERE idblog=$id
+			UPDATE blog SET title = '".$dados['title']."', image = '".$dados['image']."', text = '".$dados['text']."' WHERE idblog=$id
 
 			");
 	}
