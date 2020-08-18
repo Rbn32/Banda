@@ -22,7 +22,7 @@ class turne_model extends mysql{
 		return $this->update("UPDATE tour SET date = '".$dados['date']."', local = '".$dados['local']."', information = '".$dados['information']."' WHERE idtour = $id");
 	}
 
-	function deleteTurnedados(){
+	function deleteTurnedados(){ 
 
 		return $this->delete("delete FROM tour where idtour = $id");
 
