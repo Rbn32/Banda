@@ -9,7 +9,7 @@ class blog_model extends mysql
 
 	function insertBlogdados($dados){
 
-		return $this->save("insert into blog (title, image, text) VALUES('".$dados['title']."', '".$dados['image']."', '".$dados['text']."')");
+		return $this->save("INSERT INTO blog (title, image, text) VALUES('".$dados['title']."', '".$dados['image']."', '".$dados['text']."')");
 	}
 
 	function updateBlogdados($dados, $id){

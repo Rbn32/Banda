@@ -1,4 +1,4 @@
-<form method="POST">
+<form method="POST" enctype="multipart/form-data">
 	<a href="listar">Listar Notícias</a>
 	<div>
 		<label>Titulo</label>
@@ -6,7 +6,7 @@
 	</div>
 	<div>
 		<label>Imagem</label>
-		<input type="text" name="image">
+		<input type="file" name="image">
 	</div>
 	<div>
 		<label>Texto</label>

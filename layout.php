@@ -27,16 +27,18 @@
 	</section>
 	<section>
 		<div class="container">
-			<div><a href="<?php echo ?>listar">Blog</a></div>
+			<div><a href=""></a></div>
 		</div>
 		<div class="container">
-			<div><a href="turne/listar">Turnes</a></div>
+			<div><a href=""></a></div>
 		</div>
 	</section>
 	<section>
 		<div class="container">
-<!-- 		
- -->	</div>
+
+			<?php $controller->getHtml($params[0]);?>
+
+ 		</div>
 	</section>
 
 

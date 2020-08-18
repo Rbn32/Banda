@@ -1,8 +1,5 @@
 <?php
 
-/**
- * 
- */
 class galeria_model extends mysql
 {
 	
@@ -11,19 +8,27 @@ class galeria_model extends mysql
 		return $this->read("select * from galery");
 	}
 
-	function insertGaleriadados(){
+	function insertGaleriadados($dados){
 
-		return $this->save("insert into galery (image) VALUES ('".$_POST['###']."')");
+		return $this->save("insert into galery (title, image) VALUES ('".$dados['title']."',
+			'".$dados['image']."')");
 	}
 
-	function updateGaleriadados(){
+	function updateGaleriadados($dados, $id){
 
-		return $this->update("update galery SET image = '".$_POST['###']."' where idimage = '".$_GET['id']."'");	
+		return $this->update("UPDATE galery SET title = '".$dados['title']."', image = '".$dados['image']."' WHERE idimage=$id ");	
+
 	}
 
-	function deleteGaleriadados(){
+	function deleteGaleriadados($id){
 
-		return $this->delete("delete FROM galery where idimage = '".$_GET['id']."'");	
+		return $this->delete("DELETE FROM galery where idimage = $id");	
+	}
+
+	function editarDadosAtuais($id){
+
+		return $this->read("SELECT * FROM galery where idimage = $id");
+
 	}
 }
 
