@@ -17,7 +17,7 @@ class blog extends controller{
 			
 			$dados = $_FILES['image'];
 
-			move_uploaded_file($dados['tmp_name'], "../../img/blog/".$dados['image']);
+			move_uploaded_file($dados['tmp_name'], __DIR__."../../../img/blog/".$dados['image']);
 
 			$this->model->insertBlogdados($_POST);
 		}
