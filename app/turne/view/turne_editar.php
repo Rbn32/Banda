@@ -1,20 +1,25 @@
-<a href="listar">Listar turnes</a>
-<a href="inserir">Criar nova turnê</a>
+<div class="main">
 
-<form method="POST">
-	<div>
-		<label>Data</label>
-		<input value="<?php echo $this->dadosAtuais[0]['date'];?>" type="text" name="date">
+	<div class="link_view">
+		<a class="link" href="listar">Listar turnes</a>
+		<a class="link" href="inserir">Criar nova turnê</a>
 	</div>
-	<div>
-		<label>Local</label>
-		<input value="<?php echo $this->dadosAtuais[0]['local'];?>" type="text" name="local">
-	</div>
-	<div>
-		<label>Informação</label>
-		<input value="<?php echo $this->dadosAtuais[0]['information'];?>" type="text" name="information">
-	</div>
-	<div>
-		<button>Enviar</button>
-	</div>
-</form>
+
+	<form method="POST">
+		<div>
+			<label>Data</label>
+			<input value="<?php echo $this->dadosAtuais[0]['date'];?>" type="text" name="date">
+		</div>
+		<div>
+			<label>Local</label>
+			<input value="<?php echo $this->dadosAtuais[0]['local'];?>" type="text" name="local">
+		</div>
+		<div>
+			<label>Informação</label>
+			<input value="<?php echo $this->dadosAtuais[0]['information'];?>" type="text" name="information">
+		</div>
+		<div>
+			<button>Enviar</button>
+		</div>
+	</form>
+</div>

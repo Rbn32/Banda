@@ -1,6 +1,6 @@
 <a href="inserir">Criar uma nova imagem</a>
 
-<form action="" method="">
+<form action="" method="POST">
 	<table>	
 		<tr>
 			<td>Titulo</td>
@@ -15,7 +15,5 @@
 			<td><a href="deletar?id=<?php echo $value['idimage']?>">Deletar</a></td>
 		</tr>
 
-		<?php } ?>
-		
 	</table>
 </form>
