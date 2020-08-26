@@ -10,7 +10,13 @@
 		</div>
 		<div class="form-group">
 			<label>Imagem</label>
-			<input class="field form-control" value="<?php echo $this->dadosAtuais[0]['image'];?>" type="text" name="image">
+			<input type="file" name="image">
+			<input value="<?php if (isset($this->dadosAtuais[0]['image'])) echo($this->dadosAtuais[0]['image']);?>" type="hidden" name="image">
+
+			<?php if (isset($this->dadosAtuais[0]['image'])) { ?>
+				<img src="../img/galeria/<?php echo $this->dadosAtuais[0]['image'];?>" width= "250">
+			<?php } ?>
+
 		</div>
 		<div>
 			<button class="btn-default">Salvar</button>

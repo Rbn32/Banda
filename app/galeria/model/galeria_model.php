@@ -10,8 +10,7 @@ class galeria_model extends mysql
 
 	function insertGaleriadados($dados){
 
-		return $this->save("insert into galery (title, image) VALUES ('".$dados['title']."',
-			'".$dados['image']."')");
+		return $this->save("insert into galery (title, image) VALUES ('".$dados['title']."', '".$dados['image']."')");
 	}
 
 	function updateGaleriadados($dados, $id){

@@ -21,7 +21,7 @@ class blog extends controller{
 
 			$dados['image'] = time().$image['name'];
 
-			move_uploaded_file($image['tmp_name'], getcwd()."/img/blog/".$dados['image']);
+			move_uploaded_file($image['tmp_name'], getcwd() . "/img/blog/" . $dados['image']);
 
 			$this->model->insertBlogdados($dados);
 		}
@@ -51,11 +51,7 @@ class blog extends controller{
 				$this->model->updateBlogdados($_POST, $_GET['id']);
 				
 				move_uploaded_file($image['tmp_name'], getcwd()."/img/blog/".$dados['image']);
-
-
 			}	
-
-				
 
 				header("Location: ".$this->path." listar");					
 		}
@@ -63,12 +59,7 @@ class blog extends controller{
 		$this->dadosAtuais = $this->model->getDadosatuais($_GET['id']);
 
 		$this->setView("blog_editar");
-
-	}	
-
-				
-
-		
+	}		
 	
 
 	function deletar(){

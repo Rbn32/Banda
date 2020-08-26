@@ -15,9 +15,17 @@ class slider extends controller{
 
 		if ($_POST) {
 
-			$this->model->insertSliderdados($_POST);
+			$image = $_FILES['image'];
+
+			$dados = $_POST;
+
+			$dados['image'] = time().$image['name'];
+
+			move_uploaded_file($image['tmp_name'], getcwd() . "/img/slider/" . $dados['image']);
+
+			$this->model->insertSliderdados($dados);
 		}
-		
+			
 		$this->setView("slider_inserir");
 	}
 
@@ -31,9 +39,21 @@ class slider extends controller{
 	function editar(){
 
 		if ($_POST) {
-			
-			$this->model->updateSliderdados($_POST, $_GET['id']);
 
+			if (isset($_GET["id"])) {
+				
+				$image = $_FILES['image'];
+
+				$dados = $_POST;
+
+				$dados['image'] = time().$image['name'];
+
+				$this->model->updateSliderdados($_POST, $_GET['id']);
+
+				move_uploaded_file($image['tmp_name'], getcwd() . "/img/slider/" . $dados['image']);			
+			}
+
+			header("Location: ".$this->path." listar");
 		}
 
 		$this->dadosEditar = $this->model->getDadosatuais($_GET['id']);

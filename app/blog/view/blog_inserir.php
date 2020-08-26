@@ -9,7 +9,7 @@
 		</div>
 		<div class="form-group">
 			<label>Imagem</label>
-			<input class="data form-control" type="file" name="image">
+			<input type="file" name="image">
 		</div>
 		<div class="form-group">
 			<label>Texto</label>

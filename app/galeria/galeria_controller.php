@@ -13,12 +13,19 @@ class galeria extends controller{
 
 	function inserir(){
 
-		if ($_POST){
+	if ($_POST) {
+			
+			$image = $_FILES['image'];
 
-			$this->model->insertGaleriadados($_POST);
+			$dados = $_POST;
 
+			$dados['image'] = time().$image['name'];
+
+			move_uploaded_file($image['tmp_name'], getcwd()."/img/galeria/".$dados['image']);
+
+			$this->model->insertGaleriadados($dados);
 		}
-		
+
 		$this->setView("galeria_inserir");
 	}
 
@@ -31,15 +38,28 @@ class galeria extends controller{
 
 	function editar(){
 
-		if ($_POST){
 
-			$this->model->updateGaleriadados($_POST, $_GET['id']);
+		if ($_POST) {
 
+			if (isset($_GET["id"])) {
+						
+				 $image = $_FILES['image'];
+
+				 $dados = $_POST;
+
+				 $dados['image'] = time().$image['name'];
+				
+				$this->model->updateGaleriadados($_POST, $_GET['id']);
+				
+				move_uploaded_file($image['tmp_name'], getcwd()."/img/galeria/".$dados['image']);
+			}	
+
+				header("Location: ".$this->path." listar");					
 		}
 
 		$this->dadosAtuais = $this->model->editarDadosAtuais($_GET['id']);
 
-		$this->setView("galeria_editar");
+		$this->setView("galeria_editar");		
 	}
 
 	function deletar(){

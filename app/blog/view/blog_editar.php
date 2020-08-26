@@ -11,7 +11,7 @@
 		<div class="form-group">
 			<label>Imagem</label>
 			<input type="file" name="image">
-			<input class="field form-control" value="<?php if (isset($this->dadosAtuais[0]['image'])) echo($this->dadosAtuais[0]['image']);?>" type="hidden" name="image">
+			<input value="<?php if (isset($this->dadosAtuais[0]['image'])) echo($this->dadosAtuais[0]['image']);?>" type="hidden" name="image">
 
 			<?php if (isset($this->dadosAtuais[0]['image'])) { ?>
 				<img src="../img/blog/<?php echo $this->dadosAtuais[0]['image'];?>" width= "250">
