@@ -1,14 +1,18 @@
-<form method="POST">
-	<a href="listar">Listar imagens</a>
-	<div>
-		<label>Titulo</label>
-		<input type="text" name="title">
+<div class="post_field">
+	<div class="link_listar">
+		<a class="link" href="listar">Listar imagens</a>
 	</div>
-	<div>
-		<label>Imagem</label>
-		<input type="text" name="image">
-	</div>
-	<div>
-		<button>Enviar</button>
-	</div>
-</form>
+	<form method="POST">
+		<div class="form-group">
+			<label>Titulo</label>
+			<input class="field form-control" type="text" name="title">
+		</div>
+		<div class="form-group">
+			<label>Imagem</label>
+			<input class="field form-control" type="text" name="image">
+		</div>
+		<div>
+			<button class="btn-default">Enviar</button>
+		</div>
+	</form>
+</div>

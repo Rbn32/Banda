@@ -1,25 +1,25 @@
-
-<div class="main">
-	<div class="link_view">
+<div class="post_field">
+	<div class="link_listar">
 		<a class="link" href="listar">Listar Turnes</a>
 	</div>
-	<div>
-		<form method="POST">
-			<div class="field" style="float: left; margin-bottom: 15px;">
-				<label>Data:</label>
-				<input type="text" name="date">
-			</div>
-			<div class="field" style="margin-bottom: 15px;">
-				<label>Local:</label>
-				<input type="text" name="local">
-			</div>	
-			<div class="field" style="margin">
-				<label>Informação:</label></br>
-				<input type="textfield" name="information">
-			</div>	
-			<div>
-				<button>Enviar</button>
-			</div>
-		</form>
-	</div>
+	<form method="POST">
+		<div class="form-group">
+			<label>Data</label>
+			<input class="data form-control" type="date" name="date">
+		</div>
+		<div class="form-group">
+			<label>Local</label>
+			<input class="field form-control" style="" type="text" name="local">
+		</div>
+		<div class="form-group">
+			<label>Informação</label>
+			<textarea class="field form-control" name="information" cols="45" rows="6" ></textarea>
+		</div>	
+		<div>
+			<button class="btn-default">Salvar</button>
+		</div>
+	</form>
 </div>
+
+
+

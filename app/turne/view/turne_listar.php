@@ -1,13 +1,13 @@
-<div class="main">
-	<div class="link_view">
+<div class="post_field">
+	<div class="link_listar">
 		<a class="link" href="inserir">Criar nova turnê</a>
 	</div>
 	<form>
-		<table>
+		<table class="table table-borderless">
 			<tr>
-				<td>data</td>
-				<td>local</td>
-				<td>informação</td>
+				<td><strong>Data</strong></td>
+				<td><strong>Local</strong></td>
+				<td><strong>Informação</strong></td>
 			</tr>
 			<?php foreach ($this->dadosAtuais as $value){ ?>
 				<tr>

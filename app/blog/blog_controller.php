@@ -15,11 +15,15 @@ class blog extends controller{
 
 		if ($_POST) {
 			
-			$dados = $_FILES['image'];
+			$image = $_FILES['image'];
 
-			move_uploaded_file($dados['tmp_name'], __DIR__."../../../img/blog/".$dados['image']);
+			$dados = $_POST;
 
-			$this->model->insertBlogdados($_POST);
+			$dados['image'] = time().$image['name'];
+
+			move_uploaded_file($image['tmp_name'], getcwd()."/img/blog/".$dados['image']);
+
+			$this->model->insertBlogdados($dados);
 		}
 
 		$this->setView("blog_inserir");
@@ -35,17 +39,37 @@ class blog extends controller{
 	function editar(){
 
 		if ($_POST) {
-	
-			$this->model->updateBlogdados($_POST, $_GET['id']);
 
-			header("Location: ".$this->path." listar");
-		
+			if (isset($_GET["id"])) {
+						
+				 $image = $_FILES['image'];
+
+				 $dados = $_POST;
+
+				 $dados['image'] = time().$image['name'];
+				
+				$this->model->updateBlogdados($_POST, $_GET['id']);
+				
+				move_uploaded_file($image['tmp_name'], getcwd()."/img/blog/".$dados['image']);
+
+
+			}	
+
+				
+
+				header("Location: ".$this->path." listar");					
 		}
 
 		$this->dadosAtuais = $this->model->getDadosatuais($_GET['id']);
 
 		$this->setView("blog_editar");
-	}
+
+	}	
+
+				
+
+		
+	
 
 	function deletar(){
 

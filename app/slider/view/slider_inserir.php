@@ -1,23 +1,26 @@
-<form method="POST">
-	<a href="listar">Listar Sliders</a>
-	<div>
-		<label>titulo</label>
-		<input type="text" name="title">
+<div class="post_field">
+	<div class="link_listar">
+		<a class="link" href="listar">Listar slider</a>
 	</div>
-	<div>
-		<label>Subtitulo</label>
-		<input type="text" name="subtitle">
-	</div>
-	<div>
-		<label>Imagem</label>
-		<input type="text" name="image">
-	</div>
-	<div>
-		<label>Video</label>
-		<input type="text" name="video">
-	</div>
-	<div>
-		<button>Enviar</button>
-	</div>
-
-</form>
+	<form method="POST">
+		<div class="form-group">
+			<label>Titulo:</label></br>
+			<input class="field form-control" type="text" name="title">
+		</div></br>
+		<div class="form-group">
+			<label>Subtitulo:</label>
+			<input class="field form-control" type="text" name="subtitle">
+		</div>
+		<div class="form-group">
+			<label>Imagem:</label>
+			<input class="field form-control" type="text" name="image"></input>
+		</div>
+		<div class="form-group">
+			<label>Video:</label></br>
+			<input class="field form-control" type="text" name="video"></input>
+		</div>	
+		<div>
+			<button class="btn-default">Salvar</button>
+		</div>
+	</form>
+</div>

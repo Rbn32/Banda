@@ -1,18 +1,22 @@
-<form method="POST" enctype="multipart/form-data">
-	<a href="listar">Listar Notícias</a>
-	<div>
-		<label>Titulo</label>
-		<input type="text" name="title">
+<div class="post_field">
+	<div class="link_listar">
+		<a class="link" href="listar">Listar notícias</a>
 	</div>
-	<div>
-		<label>Imagem</label>
-		<input type="file" name="image">
-	</div>
-	<div>
-		<label>Texto</label>
-		<input type="textarea" name="text">
-	</div>
-	<div>
-		<button>Enviar</button>
-	</div>
-</form>
+	<form method="POST" enctype="multipart/form-data">
+		<div class="form-group">
+			<label>Titulo</label>
+			<input class="field form-control" type="text" name="title">
+		</div>
+		<div class="form-group">
+			<label>Imagem</label>
+			<input class="data form-control" type="file" name="image">
+		</div>
+		<div class="form-group">
+			<label>Texto</label>
+			<textarea class="field form-control" name="text" cols="45" rows="6" ></textarea>
+		</div>
+		<div>
+			<button class="btn-default">Salvar</button>
+		</div>
+	</form>
+</div>
