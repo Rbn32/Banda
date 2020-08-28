@@ -35,6 +35,8 @@
 			<div class="link_button"><a class="link_painel" href="../galeria/inserir"><strong>Galeria</strong></a></div>
 
 			<div class="link_button"><a class="link_painel" href="../slider/inserir"><strong>Slider</strong></a></div>
+
+			<div class="link_button"><a class="link_painel" href="../login/endSession"><strong>Sair</strong></a></div>
 		</div>
 	</div>
 

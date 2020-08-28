@@ -48,7 +48,7 @@ class blog extends controller{
 
 				 $dados['image'] = time().$image['name'];
 				
-				$this->model->updateBlogdados($_POST, $_GET['id']);
+				$this->model->updateBlogdados($dados, $_GET['id']);
 				
 				move_uploaded_file($image['tmp_name'], getcwd()."/img/blog/".$dados['image']);
 			}	

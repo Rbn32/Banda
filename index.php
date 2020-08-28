@@ -1,7 +1,11 @@
 <?php 
 	//função utilizada para dar include quando instanciar uma nova classe//
-	//parametro classname é o nome da classe.//
-	
+	//parametro classname é o nome da classe./
+
+	session_start();
+
+	define("PATH", "http://localhost/banda/painel/");
+
 	require_once "core/controller.php";
 	require_once "core/mysql.class.php";
 
@@ -31,6 +35,12 @@
 	$controller = new $params[0];
 	$action = $params[1];
 	$controller->$action();
+
+	if (!isset($_SESSION['user'])&&($controller != "login" && $action != "acesso")) {
+		
+		header("Location:".PATH."login/acesso");
+	}
+
 
 	include "layout.php";
 
